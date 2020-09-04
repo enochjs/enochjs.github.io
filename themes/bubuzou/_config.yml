@@ -19,11 +19,24 @@ logo: /images/logo.png
 # Comment
 #changyan: bubuzou
 leancloud:
-    appid: aD8jJBpu4oew3ovNY73z6Rdq-gzGzoHsz # 填写您的appid
-    appkey: FdzS5SOPHdhYQoEUngQ8K2QW # 填写您的appkey
+    appid: AjK8u5nEqo7tk4f0Oewmo7bk-gzGzoHsz # 填写您的appid
+    appkey: 7KD1TRNg1yRye03R4oeo9M49 # 填写您的appkey
     comment: true # 是否开启评论系统
     timer: true # 是否开启文章统计
 
+# valine:
+#   enable: true # if you want use valine,please set this value is true
+#   appId: AjK8u5nEqo7tk4f0Oewmo7bk-gzGzoHsz # leancloud application app id
+#   appKey: 7KD1TRNg1yRye03R4oeo9M49 # leancloud application app key
+#   notify: true # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+#   verify: true # valine verify code (true/false)
+#   pageSize: 20 # comment list page size
+#   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+#   lang: zh-cn # i18n: zh-cn/en
+#   placeholder: 快快献上你的评论~ # valine comment input placeholder(like: Please leave your footprints )
+#   guest_info: nick,mail,link #valine comment header info
+#   bg: /img/comment_bg.png # valine background
+#   count: true # top_img显示评论数
 
 # Analytics
 # google-analytics:
