@@ -1,6 +1,8 @@
 ---
 title: jest-api
 date: 2020-08-25 14:53:29
+categories: 
+  - 测试
 tags:
 ---
 
@@ -24,7 +26,7 @@ tags:
   - todo 
 
   > **table** 
-  > ```javascript
+  ```javascript
   1. array[]
   占位符
   %p - pretty-format.
@@ -77,6 +79,7 @@ tags:
     });
   });
   ```
+
 ### expect
   expect(received).toEqual(expected)
   - received
@@ -85,25 +88,25 @@ tags:
     1. constom
       - api
      ```typescript
-      expect.extend({
-        yourMatcher(x, y, z) {
-          return {
-            pass: true, // false => test failed
-            message: () => '',
-          };
-        },
-      });
+        expect.extend({
+          yourMatcher(x, y, z) {
+            return {
+              pass: true, // false => test failed
+              message: () => '',
+            };
+          },
+        });
      ```
       - ts interface
     ```typescript
-    declare global {
-      namespace jest {
-        interface Matchers<R> {
-          toBeWithinRange(a: number, b: number): R;
-          getExternalValueFromRemoteSource(received: number): Promise<R>
+      declare global {
+        namespace jest {
+          interface Matchers<R> {
+            toBeWithinRange(a: number, b: number): R;
+            getExternalValueFromRemoteSource(received: number): Promise<R>
+          }
         }
       }
-    }
     ```
       - example
     ```typescript
@@ -142,20 +145,18 @@ tags:
           }
         },
       });
-
-      test('numeric ranges', () => {
-        expect(100).toBeWithinRange(90, 110);
-        expect(101).not.toBeWithinRange(0, 100);
-        expect({apples: 6, bananas: 3}).toEqual({
-          apples: expect.toBeWithinRange(1, 10),
-          bananas: expect.not.toBeWithinRange(11, 20),
+        test('numeric ranges', () => {
+          expect(100).toBeWithinRange(90, 110);
+          expect(101).not.toBeWithinRange(0, 100);
+          expect({apples: 6, bananas: 3}).toEqual({
+            apples: expect.toBeWithinRange(1, 10),
+            bananas: expect.not.toBeWithinRange(11, 20),
+          });
         });
-      });
-
-      test('is divisible by external value', async () => {
-        await expect(100).toBeDivisibleByExternalValue();
-        await expect(101).not.toBeDivisibleByExternalValue();
-      });
+        test('is divisible by external value', async () => {
+          await expect(100).toBeDivisibleByExternalValue();
+          await expect(101).not.toBeDivisibleByExternalValue();
+        });
     ```
     2. system
       1. type
@@ -261,38 +262,38 @@ tags:
           > 包含
         - toHaveProperty(keyPath, value?)
         ```javascript
-        const houseForSale = {
-          bath: true,
-          bedrooms: 4,
-          kitchen: {
-            amenities: ['oven', 'stove', 'washer'],
-            area: 20,
-            wallColor: 'white',
-            'nice.oven': true,
-          },
-          'ceiling.height': 2,
-        };
-        test('this house has my desired features', () => {
-          // Example Referencing
-          expect(houseForSale).toHaveProperty('bath');
-          expect(houseForSale).toHaveProperty('bedrooms', 4);
-          // Deep referencing using dot notation
-          expect(houseForSale).toHaveProperty('kitchen.area', 20);
-          expect(houseForSale).toHaveProperty('kitchen.amenities', [
-            'oven',
-            'stove',
-            'washer',
-          ]);
-          // Deep referencing using an array containing the keyPath
-          expect(houseForSale).toHaveProperty(['kitchen', 'area'], 20);
-          expect(houseForSale).toHaveProperty(
-            ['kitchen', 'amenities'],
-            ['oven', 'stove', 'washer'],
-          );
-          expect(houseForSale).toHaveProperty(['kitchen', 'amenities', 0], 'oven');
-          expect(houseForSale).toHaveProperty(['kitchen', 'nice.oven']);
-          expect(houseForSale).toHaveProperty(['ceiling.height'], 'tall');
-        });
+          const houseForSale = {
+            bath: true,
+            bedrooms: 4,
+            kitchen: {
+              amenities: ['oven', 'stove', 'washer'],
+              area: 20,
+              wallColor: 'white',
+              'nice.oven': true,
+            },
+            'ceiling.height': 2,
+          };
+          test('this house has my desired features', () => {
+            // Example Referencing
+            expect(houseForSale).toHaveProperty('bath');
+            expect(houseForSale).toHaveProperty('bedrooms', 4);
+            // Deep referencing using dot notation
+            expect(houseForSale).toHaveProperty('kitchen.area', 20);
+            expect(houseForSale).toHaveProperty('kitchen.amenities', [
+              'oven',
+              'stove',
+              'washer',
+            ]);
+            // Deep referencing using an array containing the keyPath
+            expect(houseForSale).toHaveProperty(['kitchen', 'area'], 20);
+            expect(houseForSale).toHaveProperty(
+              ['kitchen', 'amenities'],
+              ['oven', 'stove', 'washer'],
+            );
+            expect(houseForSale).toHaveProperty(['kitchen', 'amenities', 0], 'oven');
+            expect(houseForSale).toHaveProperty(['kitchen', 'nice.oven']);
+            expect(houseForSale).toHaveProperty(['ceiling.height'], 'tall');
+          }); 
         ```
         - toEqual
         - toMatchObject

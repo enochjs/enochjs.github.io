@@ -1,6 +1,8 @@
 ---
 title: react-test-libary
 date: 2020-08-25 17:23:03
+categories: 
+  - 测试
 tags:
 ---
 

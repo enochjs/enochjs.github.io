@@ -1,6 +1,8 @@
 ---
 title: 解决canvas绘图模糊问题
 date: 2020-09-03 10:26:15
+categories: 
+  - canvas
 tags:
 ---
 
@@ -82,7 +84,7 @@ tags:
       </html>
     ```
 
-    ### 参考链接
-    - [Canvas在移动端绘制模糊的原因与解决办法](http://www.fly63.com/article/detial/3091)
-    - [Fixing HTML5 2d Canvas Blur](https://medium.com/wdstack/fixing-html5-2d-canvas-blur-8ebe27db07da)
-    - [High DPI Canvas](https://www.html5rocks.com/en/tutorials/canvas/hidpi/)
+### 参考文档
+- [Canvas在移动端绘制模糊的原因与解决办法](http://www.fly63.com/article/detial/3091)
+- [Fixing HTML5 2d Canvas Blur](https://medium.com/wdstack/fixing-html5-2d-canvas-blur-8ebe27db07da)
+- [High DPI Canvas](https://www.html5rocks.com/en/tutorials/canvas/hidpi/)
