@@ -453,27 +453,59 @@
 </ul>
 <blockquote>
 <p><strong>table</strong> </p>
-<pre class=" language-javascript"><code class="language-javascript"></code></pre>
 </blockquote>
-<ol>
-<li>array[]<br>占位符<br>%p - pretty-format.<br>%s- String.<br>%d- Number.<br>%i - Integer.<br>%f - Floating point value.<br>%j - JSON.<br>%o - Object.<br>%# - Index of the test case.<br>%% - single percent sign (‘%’). This does not consume an argument.</li>
-</ol>
-<p>// example<br>describe.each([<br>  [1, 1, 2],<br>  [1, 2, 3],<br>  [2, 1, 3],<br>])(‘.add(%i, %i)’, (a, b, expected) =&gt; {<br>  test(<code>returns ${expected}</code>, () =&gt; {</p>
-<pre><code>expect(a + b).toBe(expected);</code></pre>
-<p>  });</p>
-<p>  test(<code>returned value not be greater than ${expected}</code>, () =&gt; {</p>
-<pre><code>expect(a + b).not.toBeGreaterThan(expected);</code></pre>
-<p>  });</p>
-<p>  test(<code>returned value not be less than ${expected}</code>, () =&gt; {</p>
-<pre><code>expect(a + b).not.toBeLessThan(expected);</code></pre>
-<p>  });<br>});</p>
-<ol start="2">
-<li><p>template<br>// example<br>describe.each<code>a    | b    | expected ${1} | ${1} | ${2} ${1} | ${2} | ${3} ${2} | ${1} | ${3}</code>(‘$a + $b’, ({a, b, expected}) =&gt; {<br>test(<code>returns ${expected}</code>, () =&gt; {<br> expect(a + b).toBe(expected);<br>});</p>
-<p>test(<code>returned value not be greater than ${expected}</code>, () =&gt; {<br> expect(a + b).not.toBeGreaterThan(expected);<br>});</p>
-<p>test(<code>returned value not be less than ${expected}</code>, () =&gt; {<br> expect(a + b).not.toBeLessThan(expected);<br>});<br>});<br>```</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token number">1</span><span class="token punctuation">.</span> array<span class="token punctuation">[</span><span class="token punctuation">]</span>
+占位符
+<span class="token operator">%</span>p <span class="token operator">-</span> pretty<span class="token operator">-</span>format<span class="token punctuation">.</span>
+<span class="token operator">%</span>s<span class="token operator">-</span> String<span class="token punctuation">.</span>
+<span class="token operator">%</span>d<span class="token operator">-</span> Number<span class="token punctuation">.</span>
+<span class="token operator">%</span>i <span class="token operator">-</span> Integer<span class="token punctuation">.</span>
+<span class="token operator">%</span>f <span class="token operator">-</span> Floating point value<span class="token punctuation">.</span>
+<span class="token operator">%</span>j <span class="token operator">-</span> JSON<span class="token punctuation">.</span>
+<span class="token operator">%</span>o <span class="token operator">-</span> Object<span class="token punctuation">.</span>
+<span class="token operator">%</span># <span class="token operator">-</span> Index <span class="token keyword">of</span> the test <span class="token keyword">case</span><span class="token punctuation">.</span>
+<span class="token operator">%</span><span class="token operator">%</span> <span class="token operator">-</span> single percent sign <span class="token punctuation">(</span><span class="token string">'%'</span><span class="token punctuation">)</span><span class="token punctuation">.</span> This does not consume an argument<span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true">// example</span>
+describe<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'.add(%i, %i)'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> expected<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returns </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be greater than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeGreaterThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be less than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeLessThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token number">2</span><span class="token punctuation">.</span> template
+<span class="token comment" spellcheck="true">// example</span>
+describe<span class="token punctuation">.</span>each<span class="token template-string"><span class="token string">`
+  a    | b    | expected
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+`</span></span><span class="token punctuation">(</span><span class="token string">'$a + $b'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> expected<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returns </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be greater than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeGreaterThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be less than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeLessThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h3 id="expect"><a href="#expect" class="headerlink" title="expect"></a>expect</h3><p>expect(received).toEqual(expected)</p>
-</li>
-</ol>
 <ul>
 <li><p>received</p>
 <ol>
@@ -485,20 +517,20 @@
 <li><p>constom</p>
 <ul>
 <li>api<pre class=" language-typescript"><code class="language-typescript">expect<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-<span class="token function">yourMatcher</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token punctuation">{</span>
- <span class="token keyword">return</span> <span class="token punctuation">{</span>
-   pass<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// false => test failed</span>
-   message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">''</span><span class="token punctuation">,</span>
- <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token function">yourMatcher</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     pass<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// false => test failed</span>
+     message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">''</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
 <li>ts interface<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">declare</span> global <span class="token punctuation">{</span>
 namespace jest <span class="token punctuation">{</span>
-<span class="token keyword">interface</span> <span class="token class-name">Matchers</span><span class="token operator">&lt;</span>R<span class="token operator">></span> <span class="token punctuation">{</span>
- <span class="token function">toBeWithinRange</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> R<span class="token punctuation">;</span>
- <span class="token function">getExternalValueFromRemoteSource</span><span class="token punctuation">(</span>received<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<span class="token operator">&lt;</span>R<span class="token operator">></span>
-<span class="token punctuation">}</span>
+ <span class="token keyword">interface</span> <span class="token class-name">Matchers</span><span class="token operator">&lt;</span>R<span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token function">toBeWithinRange</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> R<span class="token punctuation">;</span>
+   <span class="token function">getExternalValueFromRemoteSource</span><span class="token punctuation">(</span>received<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<span class="token operator">&lt;</span>R<span class="token operator">></span>
+ <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 </li>
@@ -537,11 +569,20 @@ async <span class="token function">toBeDivisibleByExternalValue</span><span clas
  <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'numeric ranges'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">{</span>apples<span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">,</span> bananas<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+   apples<span class="token punctuation">:</span> expect<span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   bananas<span class="token punctuation">:</span> expect<span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'is divisible by external value'</span><span class="token punctuation">,</span> async <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+ await <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeDivisibleByExternalValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ await <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeDivisibleByExternalValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
-<p>test(‘numeric ranges’, () =&gt; {<br> expect(100).toBeWithinRange(90, 110);<br> expect(101).not.toBeWithinRange(0, 100);<br> expect({apples: 6, bananas: 3}).toEqual({<br>   apples: expect.toBeWithinRange(1, 10),<br>   bananas: expect.not.toBeWithinRange(11, 20),<br> });<br>});</p>
-<p>test(‘is divisible by external value’, async () =&gt; {<br> await expect(100).toBeDivisibleByExternalValue();<br> await expect(101).not.toBeDivisibleByExternalValue();<br>});<br>```</p>
 </li>
 <li><p>system</p>
 <ol>
@@ -671,10 +712,10 @@ async <span class="token function">toBeDivisibleByExternalValue</span><span clas
 bath<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 bedrooms<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
 kitchen<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-amenities<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'oven'</span><span class="token punctuation">,</span> <span class="token string">'stove'</span><span class="token punctuation">,</span> <span class="token string">'washer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-area<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
-wallColor<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
-<span class="token string">'nice.oven'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  amenities<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'oven'</span><span class="token punctuation">,</span> <span class="token string">'stove'</span><span class="token punctuation">,</span> <span class="token string">'washer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  area<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  wallColor<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
+  <span class="token string">'nice.oven'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token string">'ceiling.height'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -685,20 +726,20 @@ wallColor<span class="token punctuation">:</span> <span class="token string">'wh
 <span class="token comment" spellcheck="true">// Deep referencing using dot notation</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token string">'kitchen.area'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token string">'kitchen.amenities'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
-<span class="token string">'oven'</span><span class="token punctuation">,</span>
-<span class="token string">'stove'</span><span class="token punctuation">,</span>
-<span class="token string">'washer'</span><span class="token punctuation">,</span>
+  <span class="token string">'oven'</span><span class="token punctuation">,</span>
+  <span class="token string">'stove'</span><span class="token punctuation">,</span>
+  <span class="token string">'washer'</span><span class="token punctuation">,</span>
 <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// Deep referencing using an array containing the keyPath</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'area'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span>
-<span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'amenities'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">[</span><span class="token string">'oven'</span><span class="token punctuation">,</span> <span class="token string">'stove'</span><span class="token punctuation">,</span> <span class="token string">'washer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'amenities'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token string">'oven'</span><span class="token punctuation">,</span> <span class="token string">'stove'</span><span class="token punctuation">,</span> <span class="token string">'washer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'amenities'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'oven'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'nice.oven'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'ceiling.height'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'tall'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
 </li>
 <li>toEqual</li>
 <li>toMatchObject<blockquote>
