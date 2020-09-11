@@ -3,6 +3,7 @@ title: jest-api
 date: 2020-08-25 14:53:29
 categories: 
   - 测试
+  - react
 tags:
 ---
 
