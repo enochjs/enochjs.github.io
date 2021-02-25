@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>charles总结</title>
+      <link href="/2021/02/25/charles%E6%80%BB%E7%BB%93/"/>
+      <url>/2021/02/25/charles%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h3 id="charles是什么？"><a href="#charles是什么？" class="headerlink" title="charles是什么？"></a>charles是什么？</h3><pre><code>官方解释：  Charles is an HTTP proxy / HTTP monitor / Reverse Proxy  that enables a developer to view all of the HTTP and SSL / HTTPS traffic  between their machine and the Internet.  This includes requests, responses and the HTTP headers   (which contain the cookies and caching information).</code></pre><p>解释：charles是一个代理、监控、反向代理的服务器，可以抓取http、https的网络请求，包含requests, responses and the HTTP headers</p><h3 id="什么是代理（proxy）"><a href="#什么是代理（proxy）" class="headerlink" title="什么是代理（proxy）"></a>什么是代理（proxy）</h3><p>代理类似于中间商，我将需求告诉代理服务器，代理服务器处理之后，发给真正的服务器，然后将结果返回给我，而charles代理的是http、https请求（这个时候就可以对请求做任意的改动，如修改入参、修改header、修改response等）</p><h3 id="手机如何通过charles走代理"><a href="#手机如何通过charles走代理" class="headerlink" title="手机如何通过charles走代理"></a>手机如何通过charles走代理</h3><ol><li>手机开启代理<br>设置 =&gt; 无线局域网 =&gt; 选择wifi =&gt; 点击wifi，进入网络设置 =&gt; 配置代理 =&gt; 选择手动 =&gt; 服务器填写：电脑ip 端口写 8888（charles默认端口8888） </li><li>如何查看电脑ip<ul><li>mac =&gt; ifconfig en0</li><li>windows =&gt; ipconfig</li><li>charles =&gt; help =&gt; local address</li></ul></li><li>代理https (https 需要开启ssl，手机需要安装证书，否则无法访问)<ul><li>手机上需要装charles的证书<br>a. 手机代理到电脑之后访问 chls.pro/ssl (手机代理到charles之后，charles就相当于服务器，证书由当前电脑上的charles下发，所以每个电脑都是不一样的，测试机访问不同的电脑，都需要安装对应电脑上下发的证书)<br>b. 下载证书<br>c. 安装证书<br>d. ios10 以上需要信任证书 （设置 =&gt; 通用 =&gt; 关于本机 =&gt; 证书信任设置 =&gt; 开启信任）<br>e. 描述文件 （设置 =&gt; 通用 =&gt; 描述文件与设备管理，可查看证书信息）</li><li>开启ssl proxy<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/ssl-proxy.jpg"><br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/ssl-proxy-setting.jpg"><br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/ssl-proxy-setting-add.jpg"></li></ul></li></ol><h3 id="常见用法-Q-amp-A"><a href="#常见用法-Q-amp-A" class="headerlink" title="常见用法 Q&amp;A"></a>常见用法 Q&amp;A</h3><ol><li><p>我想让我访问的 xxx网站的 html、js等资源，访问到我本地（如测试环境地址为  xxx.test.xxx, 我希望手机访问这个网站的时候，访问我本地的资源文件）</p><ul><li>charles =&gt; tools =&gt; rewrite</li><li><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/rewrite-assets.jpg"></li></ul></li><li><p>我想给目标的请求加 header怎么办呢？</p><ul><li>charles =&gt; tools =&gt; rewrite</li><li>添加header<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/header.jpg"><br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/add-header.jpg"></li><li>当然也可以添加其他的，如queryParam、body等<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/other.jpg"></li></ul></li><li><p>设置filter<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/filter.jpg"></p></li><li><p>focus<br>选中链接 =&gt; 右键 =&gt; focus</p></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>axios总结</title>
       <link href="/2020/09/17/axios%E6%80%BB%E7%BB%93/"/>
       <url>/2020/09/17/axios%E6%80%BB%E7%BB%93/</url>
