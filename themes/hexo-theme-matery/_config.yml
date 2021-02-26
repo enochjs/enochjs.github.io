@@ -321,7 +321,7 @@ valine:
 # MiniValine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 # See: https://github.com/MiniValine/MiniValine
 minivaline:
-  enable: true
+  enable: false
   appId: AjK8u5nEqo7tk4f0Oewmo7bk-gzGzoHsz # Your leancloud application appid
   appKey: 7KD1TRNg1yRye03R4oeo9M49 # Your leancloud application appkey
   mode: DesertsP # DesertsP or xCss
