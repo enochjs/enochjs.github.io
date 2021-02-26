@@ -14,9 +14,19 @@ lets a web site tell browsers that it should only be accessed using HTTPS, inste
 ```
 就是是hsts是由服务端设置response header 为 Strict-Transport-Security，告诉浏览器，只支持https请求，http请求会被307重定向为https
 
+```
 Strict-Transport-Security: max-age= expire-time
 Strict-Transport-Security: max-age= expire-time; includeSubDomains
 Strict-Transport-Security: max-age=expire-time; preload
+
+max-age=expire-time
+The time, in seconds, that the browser should remember that a site is only to be accessed using HTTPS. （当前域名只接受https）
+
+includeSubDomains 可选
+If this optional parameter is specified, this rule applies to all of the site's subdomains as well. （当前域名、子域名，只接受https）
+
+preload 可选 (看起来是说会预加载)，浏览器有个内置列表，在这个列表内，无论什么时候访问都是https
+```
 
 ### 注意事项
 ```
@@ -51,3 +61,8 @@ the browser knows your site is HTTPS capable and will honor the Strict-Transport
 6. 这个时候再去看看chrome hsts设置，已经又有了
 
 总结：一开始浏览器没有hsts设置的时候，浏览器是不会强制将请求重定向到https的，一般的解决方案是，由302重定向到https，这个时候https返回hsts设置，浏览器校验证书通过，设置hsts信息，再访问的时候，浏览器就会根据配置自动重定向到https，向服务器发送https请求。（这也就是为什么我们第一次访问的时候回307，因为我们之前已经访问过百度，浏览器已经配置过hsts了）
+
+### 参考链接
+[HSTS详解](https://zhuanlan.zhihu.com/p/25537440)
+[如何删除hsts](https://appuals.com/how-to-clear-or-disable-hsts-for-chrome-firefox-and-internet-explorer/)
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security)
