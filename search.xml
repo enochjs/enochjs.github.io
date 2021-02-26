@@ -4,12 +4,37 @@
   
     
     <entry>
+      <title>HSTS</title>
+      <link href="/2021/02/26/HSTS/"/>
+      <url>/2021/02/26/HSTS/</url>
+      
+        <content type="html"><![CDATA[<h3 id="HSTS是什么"><a href="#HSTS是什么" class="headerlink" title="HSTS是什么"></a>HSTS是什么</h3><p>HSTS全称HTTP Strict-Transport-Security</p><pre><code>The HTTP Strict-Transport-Security response header (often abbreviated as HSTS)lets a web site tell browsers that it should only be accessed using HTTPS, instead of using HTTP.</code></pre><p>就是是hsts是由服务端设置response header 为 Strict-Transport-Security，告诉浏览器，只支持https请求，http请求会被307重定向为https</p><p>Strict-Transport-Security: max-age= expire-time<br>Strict-Transport-Security: max-age= expire-time; includeSubDomains<br>Strict-Transport-Security: max-age=expire-time; preload</p><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><pre><code>Note: The Strict-Transport-Security header is ignored by the browser when your site is accessed using HTTP;this is because an attacker may intercept HTTP connections and inject the header or remove it.When your site is accessed over HTTPS with no certificate errors,the browser knows your site is HTTPS capable and will honor the Strict-Transport-Security header.</code></pre><p>就是说，http 请求设置Strict-Transport-Security浏览器是不会生效的，因为攻击者可能会拦截请求更改header，如果https的请求通过了认证，浏览器就会设置Strict-Transport-Security </p><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>让所有的请求都通过https访问，不允许http请求访问</p><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><ol><li><p>访问 <a href="http://www.baidu.com/" target="_blank" rel="noopener">http://www.baidu.com</a>, 查看network, 会发现会被307重定向到https<br><img src="/2021/02/26/HSTS/baidu307.jpg"><br><img src="/2021/02/26/HSTS/baidu307detail.jpg"></p></li><li><p>chrome 访问 chrome://net-internals/#hsts, 我们会发现已经有了hsts配置，如下图<br><img src="/2021/02/26/HSTS/hsts-detail.jpg"></p></li><li><p>删除 hsts配置<br><img src="/2021/02/26/HSTS/hsts-delete.jpg"></p></li><li><p>在访问 <a href="http://www.baid.com/" target="_blank" rel="noopener">http://www.baid.com</a>, 查看network, 会发现有一个302的请求（客户端重定向）<br><img src="/2021/02/26/HSTS/baidu302.jpg"><br><img src="/2021/02/26/HSTS/baidu302detail.jpg"></p></li><li><p>我们再看看 <a href="https://www.baid.com/" target="_blank" rel="noopener">https://www.baid.com</a> 的response header<br><img src="/2021/02/26/HSTS/baidu-https-detail.jpg"></p></li><li><p>这个时候再去看看chrome hsts设置，已经又有了</p></li></ol><p>总结：一开始浏览器没有hsts设置的时候，浏览器是不会强制将请求重定向到https的，一般的解决方案是，由302重定向到https，这个时候https返回hsts设置，浏览器校验证书通过，设置hsts信息，再访问的时候，浏览器就会根据配置自动重定向到https，向服务器发送https请求。（这也就是为什么我们第一次访问的时候回307，因为我们之前已经访问过百度，浏览器已经配置过hsts了）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>charles总结</title>
       <link href="/2021/02/25/charles%E6%80%BB%E7%BB%93/"/>
       <url>/2021/02/25/charles%E6%80%BB%E7%BB%93/</url>
       
         <content type="html"><![CDATA[<h3 id="charles是什么？"><a href="#charles是什么？" class="headerlink" title="charles是什么？"></a>charles是什么？</h3><pre><code>官方解释：  Charles is an HTTP proxy / HTTP monitor / Reverse Proxy  that enables a developer to view all of the HTTP and SSL / HTTPS traffic  between their machine and the Internet.  This includes requests, responses and the HTTP headers   (which contain the cookies and caching information).</code></pre><p>解释：charles是一个代理、监控、反向代理的服务器，可以抓取http、https的网络请求，包含requests, responses and the HTTP headers</p><h3 id="什么是代理（proxy）"><a href="#什么是代理（proxy）" class="headerlink" title="什么是代理（proxy）"></a>什么是代理（proxy）</h3><p>代理类似于中间商，我将需求告诉代理服务器，代理服务器处理之后，发给真正的服务器，然后将结果返回给我，而charles代理的是http、https请求（这个时候就可以对请求做任意的改动，如修改入参、修改header、修改response等）</p><h3 id="手机如何通过charles走代理"><a href="#手机如何通过charles走代理" class="headerlink" title="手机如何通过charles走代理"></a>手机如何通过charles走代理</h3><ol><li>手机开启代理<br>设置 =&gt; 无线局域网 =&gt; 选择wifi =&gt; 点击wifi，进入网络设置 =&gt; 配置代理 =&gt; 选择手动 =&gt; 服务器填写：电脑ip 端口写 8888（charles默认端口8888） </li><li>如何查看电脑ip<ul><li>mac =&gt; ifconfig en0</li><li>windows =&gt; ipconfig</li><li>charles =&gt; help =&gt; local address</li></ul></li><li>代理https (https 需要开启ssl，手机需要安装证书，否则无法访问)<ul><li>手机上需要装charles的证书<br>a. 手机代理到电脑之后访问 chls.pro/ssl (手机代理到charles之后，charles就相当于服务器，证书由当前电脑上的charles下发，所以每个电脑都是不一样的，测试机访问不同的电脑，都需要安装对应电脑上下发的证书)<br>b. 下载证书<br>c. 安装证书<br>d. ios10 以上需要信任证书 （设置 =&gt; 通用 =&gt; 关于本机 =&gt; 证书信任设置 =&gt; 开启信任）<br>e. 描述文件 （设置 =&gt; 通用 =&gt; 描述文件与设备管理，可查看证书信息）</li><li>开启ssl proxy<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/ssl-proxy.jpg"><br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/ssl-proxy-setting.jpg"><br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/ssl-proxy-setting-add.jpg"></li></ul></li></ol><h3 id="常见用法-Q-amp-A"><a href="#常见用法-Q-amp-A" class="headerlink" title="常见用法 Q&amp;A"></a>常见用法 Q&amp;A</h3><ol><li><p>我想让我访问的 xxx网站的 html、js等资源，访问到我本地（如测试环境地址为  xxx.test.xxx, 我希望手机访问这个网站的时候，访问我本地的资源文件）</p><ul><li>charles =&gt; tools =&gt; rewrite</li><li><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/rewrite-assets.jpg"></li></ul></li><li><p>我想给目标的请求加 header怎么办呢？</p><ul><li>charles =&gt; tools =&gt; rewrite</li><li>添加header<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/header.jpg"><br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/add-header.jpg"></li><li>当然也可以添加其他的，如queryParam、body等<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/other.jpg"></li></ul></li><li><p>设置filter<br><img src="/2021/02/25/charles%E6%80%BB%E7%BB%93/filter.jpg"></p></li><li><p>focus<br>选中链接 =&gt; 右键 =&gt; focus</p></li></ol>]]></content>
       
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
       
       
     </entry>
