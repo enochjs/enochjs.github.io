@@ -34,6 +34,7 @@ tags:
     c. 安装证书
     d. ios10 以上需要信任证书 （设置 => 通用 => 关于本机 => 证书信任设置 => 开启信任）
     e. 描述文件 （设置 => 通用 => 描述文件与设备管理，可查看证书信息）
+    f. charles => proxy => ssl proxy settting => host: *, port: 443
   - 开启ssl proxy
     ![](ssl-proxy.jpg)
     ![](ssl-proxy-setting.jpg)
