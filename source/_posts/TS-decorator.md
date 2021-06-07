@@ -298,3 +298,7 @@ tsconfig.json
 
 
 ```
+
+### 参考资料
+- [ts 文档](https://www.typescriptlang.org/docs/handbook/decorators.html)
+- [不错的文章](http://blog.wolksoftware.com/decorators-reflection-javascript-typescript)
