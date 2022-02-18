@@ -121,4 +121,4 @@ deploy:
   repo: https://github.com/enochjs/enochjs.github.io.git
   branch: gh-pages
   message: "deploy"
-  token: "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"
+  token: $GIT_HUB_TOKEN
