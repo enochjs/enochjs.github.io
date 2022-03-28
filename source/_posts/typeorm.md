@@ -1,6 +1,8 @@
 ---
-title: typeorm
+title: typeORM
 date: 2022-03-08 18:01:01
+categories:
+  - database
 tags:
 ---
 
