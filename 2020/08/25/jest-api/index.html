@@ -1,0 +1,1668 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="jest-api, enochjs">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>jest-api | enochjs</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="enochjs" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">enochjs</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">enochjs</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/enochjs" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/enochjs" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">jest-api</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
+                                测试
+                            </a>
+                        
+                            <a href="/categories/%E6%B5%8B%E8%AF%95/react/" class="post-category">
+                                react
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-08-25
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="global"><a href="#global" class="headerlink" title="global"></a>global</h3><ul>
+<li><p>beforeAll(fn, timeout)</p>
+</li>
+<li><p>afterAll(fn, timeout)</p>
+</li>
+<li><p>beforeEach(fn, timeout)</p>
+</li>
+<li><p>afterEach(fn, timeout)</p>
+</li>
+<li><p>describe</p>
+<blockquote>
+<p>describe(name, fn)<br>describe.each(table)(name, fn)</p>
+</blockquote>
+<ul>
+<li>only 只运行当前语法块（一般调试有问题的测试模块时使用）</li>
+<li>skip 跳过当前语法块 (遇到比较棘手的问题，又想把其他的测试跑完，可以先跳过)</li>
+</ul>
+</li>
+<li><p>test(it) </p>
+<blockquote>
+<p>test(name, fn, timeout)<br>test.each(table)(name, fn, timeout)<br>test.concurrent(name, fn, timeout) experimental</p>
+</blockquote>
+<ul>
+<li>only 只运行当前测试</li>
+<li>skip 跳过当前测试</li>
+<li>todo </li>
+</ul>
+<blockquote>
+<p><strong>table</strong> </p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token number">1</span><span class="token punctuation">.</span> array<span class="token punctuation">[</span><span class="token punctuation">]</span>
+占位符
+<span class="token operator">%</span>p <span class="token operator">-</span> pretty<span class="token operator">-</span>format<span class="token punctuation">.</span>
+<span class="token operator">%</span>s<span class="token operator">-</span> String<span class="token punctuation">.</span>
+<span class="token operator">%</span>d<span class="token operator">-</span> Number<span class="token punctuation">.</span>
+<span class="token operator">%</span>i <span class="token operator">-</span> Integer<span class="token punctuation">.</span>
+<span class="token operator">%</span>f <span class="token operator">-</span> Floating point value<span class="token punctuation">.</span>
+<span class="token operator">%</span>j <span class="token operator">-</span> JSON<span class="token punctuation">.</span>
+<span class="token operator">%</span>o <span class="token operator">-</span> Object<span class="token punctuation">.</span>
+<span class="token operator">%</span># <span class="token operator">-</span> Index <span class="token keyword">of</span> the test <span class="token keyword">case</span><span class="token punctuation">.</span>
+<span class="token operator">%</span><span class="token operator">%</span> <span class="token operator">-</span> single percent sign <span class="token punctuation">(</span><span class="token string">'%'</span><span class="token punctuation">)</span><span class="token punctuation">.</span> This does not consume an argument<span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true">// example</span>
+describe<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">'.add(%i, %i)'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> expected<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returns </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be greater than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeGreaterThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be less than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeLessThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token number">2</span><span class="token punctuation">.</span> template
+<span class="token comment" spellcheck="true">// example</span>
+describe<span class="token punctuation">.</span>each<span class="token template-string"><span class="token string">`
+  a    | b    | expected
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+  </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">2</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> | </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token number">3</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+`</span></span><span class="token punctuation">(</span><span class="token string">'$a + $b'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> expected<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returns </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be greater than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeGreaterThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">test</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`returned value not be less than </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>expected<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeLessThan</span><span class="token punctuation">(</span>expected<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+<h3 id="expect"><a href="#expect" class="headerlink" title="expect"></a>expect</h3><p>  expect(received).toEqual(expected)</p>
+<ul>
+<li><p>received</p>
+<ol>
+<li>expect(value) except(value).not</li>
+</ol>
+</li>
+<li><p>matcher</p>
+<ol>
+<li><p>constom</p>
+<ul>
+<li>api<pre class=" language-typescript"><code class="language-typescript">expect<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ <span class="token function">yourMatcher</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> z<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     pass<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// false => test failed</span>
+     message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">''</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>ts interface<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">declare</span> global <span class="token punctuation">{</span>
+namespace jest <span class="token punctuation">{</span>
+ <span class="token keyword">interface</span> <span class="token class-name">Matchers</span><span class="token operator">&lt;</span>R<span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token function">toBeWithinRange</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> R<span class="token punctuation">;</span>
+   <span class="token function">getExternalValueFromRemoteSource</span><span class="token punctuation">(</span>received<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Promise<span class="token operator">&lt;</span>R<span class="token operator">></span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+<li>example<pre class=" language-typescript"><code class="language-typescript">expect<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<span class="token function">toBeWithinRange</span><span class="token punctuation">(</span>received<span class="token punctuation">,</span> floor<span class="token punctuation">,</span> ceiling<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> pass <span class="token operator">=</span> received <span class="token operator">>=</span> floor <span class="token operator">&amp;&amp;</span> received <span class="token operator">&lt;=</span> ceiling<span class="token punctuation">;</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>pass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+       <span class="token template-string"><span class="token string">`expected </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>received<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> not to be within range </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>floor<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ceiling<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+     pass<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+       <span class="token template-string"><span class="token string">`expected </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>received<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> to be within range </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>floor<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>ceiling<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+     pass<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+async <span class="token function">toBeDivisibleByExternalValue</span><span class="token punctuation">(</span>received<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> externalValue <span class="token operator">=</span> await <span class="token function">getExternalValueFromRemoteSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">const</span> pass <span class="token operator">=</span> received <span class="token operator">%</span> externalValue <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>pass<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+       <span class="token template-string"><span class="token string">`expected </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>received<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> not to be divisible by </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>externalValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+     pass<span class="token punctuation">:</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     message<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span>
+       <span class="token template-string"><span class="token string">`expected </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>received<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> to be divisible by </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>externalValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+     pass<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'numeric ranges'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">110</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span><span class="token punctuation">{</span>apples<span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">,</span> bananas<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+   apples<span class="token punctuation">:</span> expect<span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   bananas<span class="token punctuation">:</span> expect<span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeWithinRange</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'is divisible by external value'</span><span class="token punctuation">,</span> async <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+ await <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeDivisibleByExternalValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ await <span class="token function">expect</span><span class="token punctuation">(</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeDivisibleByExternalValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>system</p>
+<ol>
+<li><p>type</p>
+<ul>
+<li>toBeDefined()</li>
+<li>toBeTruthy()</li>
+<li>toBeFalsy()</li>
+<li>toBeInstanceOf(Class)</li>
+<li>toBeNull()</li>
+<li>toBeUndefined()</li>
+<li>toBeNaN()</li>
+</ul>
+</li>
+<li><p>compare</p>
+<ul>
+<li>expect.anything()<blockquote>
+<p>匹配非null和undefined的任意值</p>
+</blockquote>
+</li>
+<li>expect.any(constructor)<blockquote>
+<p>匹配任意由constructor创建的值</p>
+</blockquote>
+</li>
+<li>toBe(value)<blockquote>
+<p>strict equailty ===</p>
+</blockquote>
+</li>
+<li>toBeCloseTo<blockquote>
+<p>浮点数运算使用</p>
+</blockquote>
+</li>
+<li>toBeGreaterThan</li>
+<li>toBeGreaterThanOrEqual</li>
+<li>toBeLessThan</li>
+<li>toBeLessThanOrEqual</li>
+</ul>
+</li>
+<li><p>function</p>
+<ul>
+<li>toHaveBeenCalled()</li>
+<li>toHaveBeenCalledTimes(number)</li>
+<li>toHaveBeenCalledWith(arg1, arg2, …)</li>
+<li>toHaveBeenLastCalledWith(arg1, arg2, …)</li>
+<li>toHaveBeenNthCalledWith(nthCall, arg1, arg2, ….)<pre class=" language-typescript"><code class="language-typescript"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'drinkEach drinks each drink'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> drink <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">drinkEach</span><span class="token punctuation">(</span>drink<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'lemon'</span><span class="token punctuation">,</span> <span class="token string">'octopus'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>drink<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenNthCalledWith</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'lemon'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>drink<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenNthCalledWith</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'octopus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>toHaveReturned()</li>
+<li>toHaveReturnedTimes(number)</li>
+<li>toHaveReturnedWith(value)</li>
+<li>toHaveLastReturnedWith(value)</li>
+<li>toHaveNthReturnedWith(nthCall, value)<pre class=" language-typescript"><code class="language-typescript"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'drink returns expected nth calls'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> beverage1 <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'La Croix (Lemon)'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> beverage2 <span class="token operator">=</span> <span class="token punctuation">{</span>name<span class="token punctuation">:</span> <span class="token string">'La Croix (Orange)'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> drink <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span>beverage <span class="token operator">=</span><span class="token operator">></span> beverage<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">drink</span><span class="token punctuation">(</span>beverage1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">drink</span><span class="token punctuation">(</span>beverage2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>drink<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveNthReturnedWith</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'La Croix (Lemon)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">expect</span><span class="token punctuation">(</span>drink<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveNthReturnedWith</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'La Croix (Orange)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>promise</p>
+<ul>
+<li>resolves<pre class=" language-typescript"><code class="language-typescript"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'resolves to lemon'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// make sure to add a return statement</span>
+  <span class="token keyword">return</span> <span class="token function">expect</span><span class="token punctuation">(</span>Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'lemon'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>resolves<span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'lemon'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'resolves to lemon'</span><span class="token punctuation">,</span> async <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  await <span class="token function">expect</span><span class="token punctuation">(</span>Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'lemon'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>resolves<span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'lemon'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  await <span class="token function">expect</span><span class="token punctuation">(</span>Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'lemon'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>resolves<span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'octopus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>rejects</li>
+<li>toThrow<pre class=" language-typescript"><code class="language-typescript"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'rejects to octopus'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// make sure to add a return statement</span>
+  <span class="token keyword">return</span> <span class="token function">expect</span><span class="token punctuation">(</span>Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'octopus'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>rejects<span class="token punctuation">.</span><span class="token function">toThrow</span><span class="token punctuation">(</span>
+    <span class="token string">'octopus'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'rejects to octopus'</span><span class="token punctuation">,</span> async <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  await <span class="token function">expect</span><span class="token punctuation">(</span>Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'octopus'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>rejects<span class="token punctuation">.</span><span class="token function">toThrow</span><span class="token punctuation">(</span><span class="token string">'octopus'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>asserts</p>
+<ul>
+<li><p>expect.assertions</p>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 断言执行的次数</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'doAsync calls both callbacks'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  expect<span class="token punctuation">.</span><span class="token function">assertions</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">callback1</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">function</span> <span class="token function">callback2</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">expect</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">doAsync</span><span class="token punctuation">(</span>callback1<span class="token punctuation">,</span> callback2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>expect.hasAssertions</p>
+</li>
+</ul>
+</li>
+<li><p>string</p>
+<ul>
+<li>expect.stringContaining</li>
+<li>expect.stringMatching</li>
+<li>toHaveLength</li>
+<li>toMatch</li>
+</ul>
+</li>
+<li><p>object</p>
+<ul>
+<li>expect.objectContaining<blockquote>
+<p>包含</p>
+</blockquote>
+</li>
+<li>toHaveProperty(keyPath, value?)<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> houseForSale <span class="token operator">=</span> <span class="token punctuation">{</span>
+bath<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+bedrooms<span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+kitchen<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  amenities<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'oven'</span><span class="token punctuation">,</span> <span class="token string">'stove'</span><span class="token punctuation">,</span> <span class="token string">'washer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  area<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+  wallColor<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
+  <span class="token string">'nice.oven'</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token string">'ceiling.height'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'this house has my desired features'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">// Example Referencing</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token string">'bath'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token string">'bedrooms'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Deep referencing using dot notation</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token string">'kitchen.area'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token string">'kitchen.amenities'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+  <span class="token string">'oven'</span><span class="token punctuation">,</span>
+  <span class="token string">'stove'</span><span class="token punctuation">,</span>
+  <span class="token string">'washer'</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Deep referencing using an array containing the keyPath</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'area'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span>
+  <span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'amenities'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token string">'oven'</span><span class="token punctuation">,</span> <span class="token string">'stove'</span><span class="token punctuation">,</span> <span class="token string">'washer'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'amenities'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'oven'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'kitchen'</span><span class="token punctuation">,</span> <span class="token string">'nice.oven'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>houseForSale<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveProperty</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'ceiling.height'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'tall'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> </code></pre>
+</li>
+<li>toEqual</li>
+<li>toMatchObject<blockquote>
+<p>包含</p>
+</blockquote>
+</li>
+<li>toStrictEqual<blockquote>
+<p>{a: undefined, b: 2} not toStrictEqual {b: 2}</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>array</p>
+<ul>
+<li>expect.arrayContaining(array)<blockquote>
+<p>包含</p>
+</blockquote>
+</li>
+<li>toHaveLength</li>
+<li>toContain</li>
+<li>toContainEqual<blockquote>
+<p>匹配所有值</p>
+</blockquote>
+</li>
+<li>toStrictEqual<blockquote>
+<p>[, 1] not toStrictEqual [undefined, 1]</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>snapshot</p>
+<ul>
+<li>expect.addSnapshotSerializer</li>
+<li>toMatchSnapshot</li>
+<li>toMatchInlineSnapshot</li>
+<li>toThrowErrorMatchingSnapshot</li>
+<li>toThrowErrorMatchingInlineSnapshot</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="mocks"><a href="#mocks" class="headerlink" title="mocks"></a>mocks</h3><ol>
+<li><p>mock modules</p>
+<ul>
+<li><p>jest.disableAutomock()</p>
+<blockquote>
+<p>禁用automock；所有的 require() 都会返回真是的版本，而不是mock的版本</p>
+</blockquote>
+</li>
+<li><p>jest.enableAutomock()</p>
+</li>
+<li><p>jest.createMockFromModule(moduleName)</p>
+<blockquote>
+<p>从真实的文件mock，默认为require() 返回的值</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// utils.js</span>
+ <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+   authorize<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token string">'token'</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   isAuthorized<span class="token punctuation">:</span> secret <span class="token operator">=</span><span class="token operator">></span> secret <span class="token operator">===</span> <span class="token string">'wizard'</span><span class="token punctuation">,</span>
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// __tests__/createMockFromModule.test.js</span>
+ <span class="token keyword">const</span> utils <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">createMockFromModule</span><span class="token punctuation">(</span><span class="token string">'../utils'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">default</span><span class="token punctuation">;</span>
+ utils<span class="token punctuation">.</span>isAuthorized <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span>secret <span class="token operator">=</span><span class="token operator">></span> secret <span class="token operator">===</span> <span class="token string">'not wizard'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'implementation created by jest.createMockFromModule'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span>utils<span class="token punctuation">.</span>authorize<span class="token punctuation">.</span>mock<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeTruthy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span>utils<span class="token punctuation">.</span><span class="token function">authorize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'token'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span>utils<span class="token punctuation">.</span><span class="token function">isAuthorized</span><span class="token punctuation">(</span><span class="token string">'not wizard'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>jest.mock(moduleName, factory, options)</p>
+<blockquote>
+<p>自动mock, 如果没有实现factory，将返回undefined</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// banana.js</span>
+ module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'banana'</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// __tests__/test.js</span>
+ jest<span class="token punctuation">.</span><span class="token function">mock</span><span class="token punctuation">(</span><span class="token string">'../banana'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">const</span> banana <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../banana'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// banana will be explicitly mocked.</span>
+ <span class="token function">banana</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// return  undefined</span>
+
+ <span class="token keyword">import</span> moduleName<span class="token punctuation">,</span> <span class="token punctuation">{</span>foo<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../moduleName'</span><span class="token punctuation">;</span>
+
+ jest<span class="token punctuation">.</span><span class="token function">mock</span><span class="token punctuation">(</span><span class="token string">'../moduleName'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token punctuation">{</span>
+     __esModule<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+     <span class="token keyword">default</span><span class="token punctuation">:</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+     foo<span class="token punctuation">:</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">43</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">moduleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Will return 42</span>
+ <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Will return 43</span></code></pre>
+</li>
+<li><p>jest.unmock(moduleName)</p>
+<blockquote>
+<p>指定某个文件使用真是的moudle</p>
+</blockquote>
+</li>
+<li><p>jest.doMock(moduleName, factory, options)</p>
+<blockquote>
+<p>jest.mock 是要放在top level的， doMock可以在语法块里面</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   jest<span class="token punctuation">.</span><span class="token function">resetModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'moduleName 1'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   jest<span class="token punctuation">.</span><span class="token function">doMock</span><span class="token punctuation">(</span><span class="token string">'../moduleName'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">const</span> moduleName <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../moduleName'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">moduleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'moduleName 2'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   jest<span class="token punctuation">.</span><span class="token function">doMock</span><span class="token punctuation">(</span><span class="token string">'../moduleName'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">const</span> moduleName <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../moduleName'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">moduleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>jest.dontMock(moduleName)</p>
+</li>
+<li><p>jest.setMock(moduleName, moduleExports)</p>
+</li>
+<li><p>jest.requireActual(moduleName)</p>
+</li>
+<li><p>jest.requireMock(moduleName)</p>
+</li>
+<li><p>jest.resetModules()</p>
+<blockquote>
+<p>reset cache value</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">const</span> sum1 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../sum'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ jest<span class="token punctuation">.</span><span class="token function">resetModules</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">const</span> sum2 <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../sum'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ sum1 <span class="token operator">===</span> sum2<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span></code></pre>
+</li>
+<li><p>jest.isolateModules(fn)</p>
+<blockquote>
+<p>隔离moudle，类似于创建一个沙箱</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">let</span> myModule<span class="token punctuation">;</span>
+ jest<span class="token punctuation">.</span><span class="token function">isolateModules</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   myModule <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'myModule'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">const</span> otherCopyOfMyModule <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'myModule'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>mock functions </p>
+<ul>
+<li><p>jest.fn(implementation)</p>
+</li>
+<li><p>jest.isMockFunction(fn)</p>
+</li>
+<li><p>jest.spyOn(object, methodName)</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">const</span> video <span class="token operator">=</span> <span class="token punctuation">{</span>
+   <span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+ module<span class="token punctuation">.</span>exports <span class="token operator">=</span> video<span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// test</span>
+ <span class="token keyword">const</span> video <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./video'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'plays video'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> spy <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">spyOn</span><span class="token punctuation">(</span>video<span class="token punctuation">,</span> <span class="token string">'play'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">const</span> isPlaying <span class="token operator">=</span> video<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token function">expect</span><span class="token punctuation">(</span>spy<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span>isPlaying<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   spy<span class="token punctuation">.</span><span class="token function">mockRestore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>jest.spyOn(object, methodName, accessType?)</p>
+<blockquote>
+<p>accessType set | get</p>
+</blockquote>
+</li>
+<li><p>jest.clearAllMocks()</p>
+<blockquote>
+<p>清除所有mocks 的 mock.calls mock.instances 属性</p>
+</blockquote>
+</li>
+<li><p>jest.resetAllMocks()</p>
+<blockquote>
+<p>清除所有mocks 的所有状态</p>
+</blockquote>
+</li>
+<li><p>jest.restoreAllMocks()</p>
+<blockquote>
+<p>返回到orgin的状态</p>
+</blockquote>
+</li>
+<li><p>mockFn</p>
+<ul>
+<li><p>.getMockName()</p>
+</li>
+<li><p>.mock.calls</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token function">f</span><span class="token punctuation">(</span><span class="token string">'arg1'</span><span class="token punctuation">,</span> <span class="token string">'arg2'</span><span class="token punctuation">)</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token string">'arg3'</span><span class="token punctuation">,</span> <span class="token string">'arg4'</span><span class="token punctuation">)</span>
+mock<span class="token punctuation">.</span>calls <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'args1'</span><span class="token punctuation">,</span> <span class="token string">'args2'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'args3'</span><span class="token punctuation">,</span> <span class="token string">'args4'</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+</li>
+<li><p>.mock.results</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token punctuation">[</span>
+   <span class="token punctuation">{</span>
+     type<span class="token punctuation">:</span> <span class="token string">'return'</span><span class="token punctuation">,</span>
+     value<span class="token punctuation">:</span> <span class="token string">'result1'</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+     type<span class="token punctuation">:</span> <span class="token string">'throw'</span><span class="token punctuation">,</span>
+     value<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true">/* Error instance */</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token punctuation">{</span>
+     type<span class="token punctuation">:</span> <span class="token string">'return'</span><span class="token punctuation">,</span>
+     value<span class="token punctuation">:</span> <span class="token string">'result2'</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>.mock.instances</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> mockFn <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">mockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+mockFn<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>instances<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> a<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+mockFn<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>instances<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> b<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span></code></pre>
+</li>
+<li><p>.mockClear()</p>
+<blockquote>
+<p>清除 mockFn.mock.calls和mockFn.mock.instances</p>
+</blockquote>
+</li>
+<li><p>.mockReset()</p>
+<blockquote>
+<p>返回到初始化的状态</p>
+</blockquote>
+</li>
+<li><p>.mockRestore()</p>
+<blockquote>
+<p>返回到origin</p>
+</blockquote>
+</li>
+<li><p>.mockImplementation(fn)</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">const</span> mockFn <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mockImplementation</span><span class="token punctuation">(</span>scalar <span class="token operator">=</span><span class="token operator">></span> <span class="token number">42</span> <span class="token operator">+</span> scalar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// or: jest.fn(scalar => 42 + scalar);</span>
+
+ <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token function">mockFn</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token function">mockFn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ a <span class="token operator">===</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+ b <span class="token operator">===</span> <span class="token number">43</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+
+ mockFn<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+ mockFn<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span></code></pre>
+</li>
+<li><p>.mockImplementationOnce(fn)</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">const</span> myMockFn <span class="token operator">=</span> jest
+   <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'default'</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">mockImplementationOnce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'first call'</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">mockImplementationOnce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'second call'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// 'first call', 'second call', 'default', 'default'</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>.mockName(value)</p>
+<blockquote>
+<p>打印信息用</p>
+</blockquote>
+</li>
+<li><p>.mockReturnThis()</p>
+</li>
+<li><p>.mockReturnValue(value)</p>
+</li>
+<li><p>.mockReturnValueOnce(value)</p>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token keyword">const</span> myMockFn <span class="token operator">=</span> jest
+   <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">mockReturnValue</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">mockReturnValueOnce</span><span class="token punctuation">(</span><span class="token string">'first call'</span><span class="token punctuation">)</span>
+   <span class="token punctuation">.</span><span class="token function">mockReturnValueOnce</span><span class="token punctuation">(</span><span class="token string">'second call'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">// 'first call', 'second call', 'default', 'default'</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">myMockFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>.mockResolvedValue(value)</p>
+<blockquote>
+<p>jest.fn().mockImplementation(() =&gt; Promise.resolve(value));</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'async test'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> asyncMock <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mockResolvedValue</span><span class="token punctuation">(</span><span class="token number">43</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 43</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>.mockResolvedValueOnce(value)</p>
+<blockquote>
+<p>jest.fn().mockImplementationOnce(() =&gt; Promise.resolve(value));</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'async test'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> asyncMock <span class="token operator">=</span> jest
+     <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">mockResolvedValue</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">mockResolvedValueOnce</span><span class="token punctuation">(</span><span class="token string">'first call'</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">mockResolvedValueOnce</span><span class="token punctuation">(</span><span class="token string">'second call'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// first call</span>
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// second call</span>
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// default</span>
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// default</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>.mockRejectedValue(value)</p>
+<blockquote>
+<p>jest.fn().mockImplementation(() =&gt; Promise.reject(value));</p>
+</blockquote>
+</li>
+<li><p>.mockRejectedValueOnce(value)</p>
+<blockquote>
+<p>jest.fn().mockImplementationOnce(() =&gt; Promise.reject(value));</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'async test'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> asyncMock <span class="token operator">=</span> jest
+     <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">mockResolvedValueOnce</span><span class="token punctuation">(</span><span class="token string">'first call'</span><span class="token punctuation">)</span>
+     <span class="token punctuation">.</span><span class="token function">mockRejectedValueOnce</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Async error'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// first call</span>
+   <span class="token keyword">await</span> <span class="token function">asyncMock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// throws "Async error"</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>mock timers</p>
+<ul>
+<li><p>jest.useFakeTimers(implementation?: ‘modern’ | ‘legacy’)</p>
+</li>
+<li><p>jest.useRealTimers()</p>
+</li>
+<li><p>jest.runAllTicks()</p>
+<blockquote>
+<p>执行所有的微任务 process.nextTick</p>
+</blockquote>
+</li>
+<li><p>jest.runAllTimers()</p>
+<blockquote>
+<p>执行所有的微任务和宏任务 process.nextTick setTimeout setInterval setImmediate</p>
+</blockquote>
+</li>
+<li><p>jest.runAllImmediates()</p>
+<blockquote>
+<p>执行所有的 setImmediate</p>
+</blockquote>
+</li>
+<li><p>jest.advanceTimersByTime(msToRun)</p>
+<blockquote>
+<p>当前时间提前 msToRun毫秒，比如一个任务需要1000ms后执行, jest.advanceTimersByTime(1000) 就会立即执行</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// timerGame.js</span>
+<span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">timerGame</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Ready....go!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Time's up -- stop!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   callback <span class="token operator">&amp;&amp;</span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> timerGame<span class="token punctuation">;</span>
+
+<span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'calls the callback after 1 second via advanceTimersByTime'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+ <span class="token keyword">const</span> timerGame <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../timerGame'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">const</span> callback <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">timerGame</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// At this point in time, the callback should not have been called yet</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">.</span>not<span class="token punctuation">.</span><span class="token function">toBeCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// Fast-forward until all timers have been executed</span>
+ jest<span class="token punctuation">.</span><span class="token function">advanceTimersByTime</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// Now our callback should have been called!</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">expect</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalledTimes</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>jest.runOnlyPendingTimers()</p>
+<blockquote>
+<p>只执行已经 pending的task</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// infiniteTimerGame.js</span>
+ <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">function</span> <span class="token function">infiniteTimerGame</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Ready....go!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+   <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Time's up! 10 seconds before the next game starts..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     callback <span class="token operator">&amp;&amp;</span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">// Schedule the next game in 10 seconds</span>
+     <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+       <span class="token function">infiniteTimerGame</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+
+ module<span class="token punctuation">.</span>exports <span class="token operator">=</span> infiniteTimerGame<span class="token punctuation">;</span>
+
+ <span class="token comment" spellcheck="true">// __tests__/infiniteTimerGame-test.js</span>
+ <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+ jest<span class="token punctuation">.</span><span class="token function">useFakeTimers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ <span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'infiniteTimerGame'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'schedules a 10-second timer after 1 second'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+     <span class="token keyword">const</span> infiniteTimerGame <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../infiniteTimerGame'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">const</span> callback <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token function">infiniteTimerGame</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">// At this point in time, there should have been a single call to</span>
+     <span class="token comment" spellcheck="true">// setTimeout to schedule the end of the game in 1 second.</span>
+     <span class="token function">expect</span><span class="token punctuation">(</span>setTimeout<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalledTimes</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">expect</span><span class="token punctuation">(</span>setTimeout<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenLastCalledWith</span><span class="token punctuation">(</span>expect<span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span>Function<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">// Fast forward and exhaust only currently pending timers</span>
+     <span class="token comment" spellcheck="true">// (but not any new timers that get created during that process)</span>
+     jest<span class="token punctuation">.</span><span class="token function">runOnlyPendingTimers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">// At this point, our 1-second timer should have fired it's callback</span>
+     <span class="token function">expect</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBeCalled</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">// And it should have created a new timer to start the game over in</span>
+     <span class="token comment" spellcheck="true">// 10 seconds</span>
+     <span class="token function">expect</span><span class="token punctuation">(</span>setTimeout<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenCalledTimes</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token function">expect</span><span class="token punctuation">(</span>setTimeout<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toHaveBeenLastCalledWith</span><span class="token punctuation">(</span>expect<span class="token punctuation">.</span><span class="token function">any</span><span class="token punctuation">(</span>Function<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>jest.advanceTimersToNextTimer(steps)</p>
+</li>
+<li><p>jest.clearAllTimers()</p>
+</li>
+<li><p>jest.getTimerCount()</p>
+</li>
+<li><p>jest.setSystemTime(now?: number | Date)</p>
+</li>
+<li><p>jest.getRealSystemTime()</p>
+</li>
+</ul>
+</li>
+<li><p>misc</p>
+<ul>
+<li>jest.setTimeout(timeout)<pre class=" language-javascript"><code class="language-javascript"> jest<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li>jest.retryTimes()<pre class=" language-javascript"><code class="language-javascript"> jest<span class="token punctuation">.</span><span class="token function">retryTimes</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'will fail'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+   <span class="token function">expect</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="jest文档"><a href="#jest文档" class="headerlink" title="jest文档"></a>jest文档</h3><p><a href="https://jestjs.io/docs/en/getting-started" target="_blank" rel="noopener">jest</a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">enochjs</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://enochjs.github.io/2020/08/25/jest-api/">https://enochjs.github.io/2020/08/25/jest-api/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">enochjs</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/08/25/react-test-libary/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="react-test-libary">
+                        
+                        <span class="card-title">react-test-libary</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            readerfunction render(
+  ui: React.ReactElement&lt;any>,
+  options?: {
+    /* You won't often use this, expand below for
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    测试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/21/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="单元测试">
+                        
+                        <span class="card-title">单元测试</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            思考测试
+什么是单元测试？什么事集成测试 如果一个测试，需要用到真实的系统时间，真实的文件系统，或者真实的数据库，那么这个测试就进入了集成测试的范围。我们开发常说的测试属于单元测试的范畴
+测试的作用是什么
+保证项目的稳定
+提升代码的质量（一
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    测试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        if (theme && theme.toc.enable && theme.toc.showToggleBtn) {
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        }
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">enochjs</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <!-- <br>
+            
+            
+            
+            
+             -->
+            <br>
+            
+            <br>
+            
+        </div>
+        <!-- <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/enochjs" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:enochjs@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> -->
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
