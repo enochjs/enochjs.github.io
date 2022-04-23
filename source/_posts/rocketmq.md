@@ -53,32 +53,40 @@ RocketMQ提供多种发送方式，同步发送、异步发送、顺序发送、
 
 #### [架构设计](https://github.com/apache/rocketmq/blob/master/docs/cn/architecture.md)
 
-设计图
-![](rocketmq-architecture-1.jpg)
+- ![](rocketmq-architecture-1.png)
 
 #### 如何使用 docker 安装
 
 1. 安装 name-server
 
-```bash
-# ${workspace} 换成你想存储的目录，如 /Users/enochjs/docker
-docker pull rocketmqinc/rocketmq
-docker run -d --restart=always --name rmqnamesrv -p 9876:9876 -v ${workspace}/data/rocketmq/log:/root/logs -v ${workspace}/data/rocketmq/store:/root/store -e "MAX_POSSIBLE_HEAP=100000000" rocketmqinc/rocketmq sh mqnamesrv
-```
+- 创建 namesrv 数据存储路径
+
+  ```bash
+  # 创建rocketmq存储目录，以下称workspace，
+  # 如： /Users/enochjs/docker/rocketmq，将所有${workspace}替换为你的工作目录，${ip}替换成你的ip
+  # 创建日志和store目录
+     mkdir -p ${workspace}/data/log
+     mkdir -p ${workspace}/data/store
+  ```
+
+  ```bash
+  # ${workspace} 换成你想存储的目录，如 /Users/enochjs/docker
+  docker pull rocketmqinc/rocketmq
+  docker run -d --restart=always --name rmqnamesrv -p 9876:9876 -v ${workspace}/data/log:/root/logs -v ${workspace}/data/store:/root/store -e "MAX_POSSIBLE_HEAP=100000000" rocketmqinc/rocketmq sh mqnamesrv
+  ```
 
 2. 安装 broker
 
-   - 创建 broker 存储节点
+   - 创建 broker 相关存储节点
 
    ```bash
-    # ${workspace} 换成你想存储的目录，如 /Users/enochjs/docker
-    # ${ip} 你电脑的ip 如：10.0.116.233
-    mkdir -p  ${workspace}/data/rocketmq/data/broker/logs   ${workspace}/data/rocketmq/data/broker/store ${workspace}/data/rocketmq/conf
+    mkdir -p  ${workspace}/broker/logs ${workspace}/broker/store ${workspace}/conf
    ```
 
-   - 编辑 broker.conf
+   - 在 ${workspace}/conf, 新建 broker.conf 编辑 broker.conf
 
    ```bash
+   [root@iZ8vb8kifrnrz3w56c34iiZ rocketmq]# vi conf/broker.conf
    # 所属集群名称，如果节点较多可以配置多个
    brokerClusterName = DefaultCluster
    #broker名称，master和slave使用相同的名称，表明他们的主从关系
@@ -102,12 +110,16 @@ docker run -d --restart=always --name rmqnamesrv -p 9876:9876 -v ${workspace}/da
    - 启动 broker
 
    ```bash
-   # ${workspace} 换成你想存储的目录，如 /Users/enochjs/docker
-   # ${ip} 你电脑的ip 如：10.0.116.233
-   docker run -d  --restart=always --name rmqbroker --link rmqnamesrv:namesrv -p 10911:10911 -p 10909:10909 -v ${workspace}/data/rocketmq/data/broker/logs:/root/logs -v  ${workspace}/data/rocketmq/data/broker/store:/root/store -v ${workspace}/data/rocketmq/conf/broker.conf:/opt/rocketmq/conf/broker.conf -e "NAMESRV_ADDR=${ip}:9876" -e "MAX_POSSIBLE_HEAP=200000000" rocketmqinc/rocketmq sh mqbroker -c /opt/rocketmq/conf/broker.conf
+   docker run -d  --restart=always --name rmqbroker --link rmqnamesrv:namesrv -p 10911:10911 -p 10909:10909 -v ${workspace}/broker/logs:/root/logs -v  ${workspace}/broker/store:/root/store -v ${workspace}/conf/broker.conf:/opt/rocketmq/conf/broker.conf -e "NAMESRV_ADDR=${ip}:9876" -e "MAX_POSSIBLE_HEAP=200000000" rocketmqinc/rocketmq sh mqbroker -c /opt/rocketmq/conf/broker.conf
    ```
 
 3. 安装控制台界面, 访问 http://${ip}:8888,即可
    ```bash
+    docker pull pangliang/rocketmq-console-ng
     docker run -d --restart=always --name rmqadmin -e "JAVA_OPTS=-Drocketmq.namesrv.addr=${ip}:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false" -p 8888:8080 pangliang/rocketmq-console-ng
    ```
+
+### 参考资料
+
+[官方文档](https://github.com/apache/rocketmq/tree/master/docs/cn)
+[安装参考](https://codeantenna.com/a/ZZWuyeurXj)
