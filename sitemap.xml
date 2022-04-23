@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://enochjs.github.io/2020/08/21/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://enochjs.github.io/2020/08/25/react-test-libary/</loc>
     
     <lastmod>2022-02-18</lastmod>
     
   </url>
   
   <url>
-    <loc>https://enochjs.github.io/2020/08/25/react-test-libary/</loc>
+    <loc>https://enochjs.github.io/2020/08/21/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</loc>
     
     <lastmod>2022-02-18</lastmod>
     
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://enochjs.github.io/2020/09/11/react-batch-update/</loc>
+    <loc>https://enochjs.github.io/2020/08/25/jest-api/</loc>
     
     <lastmod>2022-02-18</lastmod>
     
   </url>
   
   <url>
-    <loc>https://enochjs.github.io/2020/08/25/jest-api/</loc>
+    <loc>https://enochjs.github.io/2020/09/11/react-batch-update/</loc>
     
     <lastmod>2022-02-18</lastmod>
     
@@ -132,14 +132,21 @@
 
   
   <url>
-    <loc>https://enochjs.github.io/categories/ajax/</loc>
+    <loc>https://enochjs.github.io/categories/%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2022-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://enochjs.github.io/categories/%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://enochjs.github.io/categories/typescript/</loc>
+    <lastmod>2022-04-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://enochjs.github.io/categories/ajax/</loc>
     <lastmod>2022-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -153,6 +160,13 @@
   </url>
   
   <url>
+    <loc>https://enochjs.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2022-04-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://enochjs.github.io/categories/react/</loc>
     <lastmod>2022-04-23</lastmod>
     <changefreq>daily</changefreq>
@@ -160,7 +174,7 @@
   </url>
   
   <url>
-    <loc>https://enochjs.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://enochjs.github.io/categories/typescript/decorator/</loc>
     <lastmod>2022-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -196,20 +210,6 @@
   
   <url>
     <loc>https://enochjs.github.io/categories/%E6%B5%8B%E8%AF%95/react/</loc>
-    <lastmod>2022-04-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://enochjs.github.io/categories/typescript/</loc>
-    <lastmod>2022-04-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://enochjs.github.io/categories/typescript/decorator/</loc>
     <lastmod>2022-04-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
