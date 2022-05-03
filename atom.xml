@@ -6,7 +6,7 @@
   <link href="https://enochjs.github.io/atom.xml" rel="self"/>
   
   <link href="https://enochjs.github.io/"/>
-  <updated>2022-04-23T13:00:38.268Z</updated>
+  <updated>2022-05-03T08:41:24.507Z</updated>
   <id>https://enochjs.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Parallels17</title>
+    <link href="https://enochjs.github.io/2022/05/03/Parallels17/"/>
+    <id>https://enochjs.github.io/2022/05/03/Parallels17/</id>
+    <published>2022-05-03T08:15:49.000Z</published>
+    <updated>2022-05-03T08:41:24.507Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="解决-Parallels-Desktop-17-无法连接网络问题"><a href="#解决-Parallels-Desktop-17-无法连接网络问题" class="headerlink" title="解决 Parallels Desktop 17 无法连接网络问题"></a>解决 Parallels Desktop 17 无法连接网络问题</h3><ul><li>修改一下两个配置文件</li><li>/Library/Preferences/Parallels/dispatcher.desktop.xml<ul><li>修改 dispatcher.desktop.xml，找到 &lt;Usb&gt;0&lt;/Usb&gt;，修改为 &lt;Usb&gt;1&lt;/Usb&gt; 并保存。</li></ul></li><li>/Library/Preferences/Parallels/network.desktop.xml<ul><li>修改 network.desktop.xml，找到 &lt;UseKextless&gt;1&lt;/UseKextless&gt; 或 &lt;UseKextless&gt;-1&lt;/UseKextless&gt;，修改为 &lt;UseKextless&gt;0&lt;/UseKextless&gt; 并保存</li></ul></li></ul><h3 id="Parallels-Desktop-17-1-1-操作失败-执行该操作失败-解决方案"><a href="#Parallels-Desktop-17-1-1-操作失败-执行该操作失败-解决方案" class="headerlink" title="Parallels Desktop 17.1.1 操作失败 执行该操作失败 解决方案"></a>Parallels Desktop 17.1.1 操作失败 执行该操作失败 解决方案</h3><ul><li>选择 操作 -&gt; 配置 -&gt; 高级 -&gt; 虚拟机监控程序 -&gt; Parallels，重启即可</li></ul><h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a href="https://www.jianshu.com/p/4a5fbe7d698f" target="_blank" rel="noopener">无法连接网络问题</a><br><a href="https://zhuanlan.zhihu.com/p/454602605" target="_blank" rel="noopener">执行该操作失败</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;解决-Parallels-Desktop-17-无法连接网络问题&quot;&gt;&lt;a href=&quot;#解决-Parallels-Desktop-17-无法连接网络问题&quot; class=&quot;headerlink&quot; title=&quot;解决 Parallels Desktop 17 无法连接</summary>
+      
+    
+    
+    
+    
+    <category term="软件" scheme="https://enochjs.github.io/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>rocketmq</title>
