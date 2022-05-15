@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Parallels17, enochjs">
+    <meta name="keywords" content="MIME, enochjs">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Parallels17 | enochjs</title>
+    <title>MIME | enochjs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -265,12 +265,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Parallels17</h1>
+                    <h1 class="description center-align post-title">MIME</h1>
                 </div>
             </div>
         </div>
@@ -385,13 +385,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6/">
-                                <span class="chip bg-color">软件</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -403,7 +399,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-05-15
                 </div>
                 
 
@@ -419,21 +415,96 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="解决-Parallels-Desktop-17-无法连接网络问题"><a href="#解决-Parallels-Desktop-17-无法连接网络问题" class="headerlink" title="解决 Parallels Desktop 17 无法连接网络问题"></a>解决 Parallels Desktop 17 无法连接网络问题</h3><ul>
-<li>修改一下两个配置文件</li>
-<li>/Library/Preferences/Parallels/dispatcher.desktop.xml<ul>
-<li>修改 dispatcher.desktop.xml，找到 &lt;Usb&gt;0&lt;/Usb&gt;，修改为 &lt;Usb&gt;1&lt;/Usb&gt; 并保存。</li>
+                <hr>
+<p>title: 媒体编码<br>date: 2022-05-14 19:39:40<br>tags:</p>
+<hr>
+<h4 id="MIME-（Multipurpose-Internet-Mail-Extensions）"><a href="#MIME-（Multipurpose-Internet-Mail-Extensions）" class="headerlink" title="MIME （Multipurpose Internet Mail Extensions）"></a>MIME （Multipurpose Internet Mail Extensions）</h4><ol>
+<li>媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型 ）是一种标准，用来表示文档、文件或字节流的性质和格式。</li>
+<li>通用结构</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">  type/subtype</code></pre>
+<ol start="3">
+<li>独立类型</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash"> text                表明文件是普通文本                text/plain, text/html, text/css, text/javascript
+ image               表明是某种图像。                 image/gif, image/png, image/jpeg, image/bmp, image/webp, image/x-icon, image/vnd.microsoft.icon
+ audio               音频文件                        audio/midi, audio/mpeg, audio/webm, audio/ogg, audio/wav
+ video               视频文件                        video/webm, video/ogg
+ application         二进制数据                      application/octet-stream, application/pkcs12, application/vnd.mspowerpoint, application/xhtml+xml, application/xml,  application/pdf</code></pre>
+<ol start="4">
+<li>Multipart 类型</li>
+</ol>
+<pre><code>multipart/form-data
+multipart/byteranges</code></pre>
+<h4 id="视频文件的-mime"><a href="#视频文件的-mime" class="headerlink" title="视频文件的 mime"></a>视频文件的 mime</h4><ol>
+<li>如下例子</li>
+</ol>
+<pre><code>- audio/mp4; codecs=&quot;mp4v,mp4a.40.2&quot;; profiles=&quot;isom,iso2,mp41&quot;
+- video/mp4; codecs=&quot;mp4a.40.2,avc1.64001f&quot;; profiles=&quot;mp42,isom&quot;</code></pre>
+<ol start="2">
+<li>语法介绍</li>
+</ol>
+<ul>
+<li>第一部分为媒体类型</li>
+<li>codec，视频的压缩算法，可以有多个逗号分隔</li>
+<li>profile，其他描述信息，具体我也没看懂，可以有多个，逗号分隔</li>
 </ul>
-</li>
-<li>/Library/Preferences/Parallels/network.desktop.xml<ul>
-<li>修改 network.desktop.xml，找到 &lt;UseKextless&gt;1&lt;/UseKextless&gt; 或 &lt;UseKextless&gt;-1&lt;/UseKextless&gt;，修改为 &lt;UseKextless&gt;0&lt;/UseKextless&gt; 并保存</li>
+<h4 id="市面常用的-codecs"><a href="#市面常用的-codecs" class="headerlink" title="市面常用的 codecs"></a>市面常用的 codecs</h4><ol>
+<li>H.264 Mpeg-4 AVC (高级视频编码)</li>
+<li>H.265 HEVC (高效视频编码)</li>
+<li>VP9 由谷歌开发作为一种开放和自由的视频压缩标准</li>
+</ol>
+<h4 id="浏览器支持情况"><a href="#浏览器支持情况" class="headerlink" title="浏览器支持情况"></a>浏览器支持情况</h4><ul>
+<li><a href="https://caniuse.com/?search=H.264" target="_blank" rel="noopener">H.264</a>, 目前使用最广</li>
+<li><a href="https://caniuse.com/?search=H.265" target="_blank" rel="noopener">H.265</a></li>
+<li><a href="https://caniuse.com/?search=VP9" target="_blank" rel="noopener">vp9</a></li>
 </ul>
-</li>
+<h4 id="js-如何查看视频编码"><a href="#js-如何查看视频编码" class="headerlink" title="js 如何查看视频编码"></a>js 如何查看视频编码</h4><ul>
+<li><a href="https://github.com/gpac/mp4box.js" target="_blank" rel="noopener">mp4box</a></li>
+<li>代码示例</li>
 </ul>
-<h3 id="Parallels-Desktop-17-1-1-操作失败-执行该操作失败-解决方案"><a href="#Parallels-Desktop-17-1-1-操作失败-执行该操作失败-解决方案" class="headerlink" title="Parallels Desktop 17.1.1 操作失败 执行该操作失败 解决方案"></a>Parallels Desktop 17.1.1 操作失败 执行该操作失败 解决方案</h3><ul>
-<li>选择 操作 -&gt; 配置 -&gt; 高级 -&gt; 虚拟机监控程序 -&gt; Parallels，重启即可</li>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token comment" spellcheck="true">// 浏览器</span>
+<span class="token keyword">const</span> arrayBuffer <span class="token operator">=</span> await file<span class="token punctuation">.</span><span class="token function">arrayBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// nodejs</span>
+<span class="token comment" spellcheck="true">// const buffer = await fs.promises.readFile(video_path);</span>
+<span class="token comment" spellcheck="true">// const arrayBuffer = new Uint8Array(buffer).buffer</span>
+arrayBuffer<span class="token punctuation">.</span>fileStart <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> mp4BoxFile <span class="token operator">=</span> MP4Box<span class="token punctuation">.</span><span class="token function">createFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mp4BoxFile<span class="token punctuation">.</span>onError <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">reject</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mp4BoxFile<span class="token punctuation">.</span>onReady <span class="token operator">=</span> <span class="token punctuation">(</span>info<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"info"</span><span class="token punctuation">,</span> info<span class="token punctuation">.</span>mime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getCodecValid</span><span class="token punctuation">(</span>info<span class="token punctuation">.</span>mime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    mp4BoxFile<span class="token punctuation">.</span><span class="token function">appendBuffer</span><span class="token punctuation">(</span>arrayBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mp4BoxFile<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="视频转码"><a href="#视频转码" class="headerlink" title="视频转码"></a>视频转码</h4><ul>
+<li><a href="https://github.com/fluent-ffmpeg/node-fluent-ffmpeg" target="_blank" rel="noopener">fluent-ffmpeg</a></li>
+<li><a href="https://github.com/kribblo/node-ffmpeg-installer" target="_blank" rel="noopener">@ffmpeg-installer/ffmpeg</a></li>
+<li>代码示例</li>
 </ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a href="https://www.jianshu.com/p/4a5fbe7d698f" target="_blank" rel="noopener">无法连接网络问题</a><br><a href="https://zhuanlan.zhihu.com/p/454602605" target="_blank" rel="noopener">执行该操作失败</a></p>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">import</span> ffmpeg <span class="token keyword">from</span> <span class="token string">"fluent-ffmpeg"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> path as ffmpegPath <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@ffmpeg-installer/ffmpeg"</span><span class="token punctuation">;</span>
+ffmpeg<span class="token punctuation">.</span><span class="token function">setFfmpegPath</span><span class="token punctuation">(</span>ffmpegPath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">ffmpeg</span><span class="token punctuation">(</span>inputPath<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">videoCodec</span><span class="token punctuation">(</span><span class="token string">"libx264"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// Codec  可调用命令 ffmpeg -codecs 查看所有支持的格式</span>
+  <span class="token punctuation">.</span><span class="token function">inputFPS</span><span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// FPS</span>
+  <span class="token punctuation">.</span><span class="token function">videoBitrate</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// BPS</span>
+  <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"error"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"err"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">,</span> async <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Processing finished !"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>outputPath<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><p><a href="https://www.jackpu.com/web-video-mimetype-jiu-jing-dai-biao-shi-yao-yi-si/" target="_blank" rel="noopener">MimeCodec</a><br><a href="https://www.jackpu.com/shi-yong-js-huo-qu-shi-pin-codec/" target="_blank" rel="noopener">JS 获取 Codec</a><br><a href="https://datatracker.ietf.org/doc/html/rfc6381#section-3.3" target="_blank" rel="noopener">codec</a><br><a href="https://zhuanlan.zhihu.com/p/71928833" target="_blank" rel="noopener">知乎文章</a></p>
 
             </div>
             <hr/>
@@ -459,7 +530,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://enochjs.github.io/2022/05/03/Parallels17/">https://enochjs.github.io/2022/05/03/Parallels17/</a>
+                    <a href="https://enochjs.github.io/2022/05/15/mime/">https://enochjs.github.io/2022/05/15/mime/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -496,11 +567,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6/">
-                                    <span class="chip bg-color">软件</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -541,23 +608,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/15/mime/">
+                <a href="/2022/05/15/ppt/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="MIME">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="ppt">
                         
-                        <span class="card-title">MIME</span>
+                        <span class="card-title">ppt</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-title: 媒体编码date: 2022-05-14 19:39:40tags:
+                            如何获取 ppt 内的所有文件
+可以看下microsoft中的介绍，一下为其中一段话
 
-MIME （Multipurpose Internet Mail Extensions）
-媒体类型（通常称为 Multipurpose Internet
+If you want to separately use files or objects from a PowerPoint presentatio
                         
                     </div>
                     <div class="publish-info">
@@ -582,39 +648,43 @@ MIME （Multipurpose Internet Mail Extensions）
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/23/rocketmq/">
+                <a href="/2022/05/03/Parallels17/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="rocketmq">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Parallels17">
                         
-                        <span class="card-title">rocketmq</span>
+                        <span class="card-title">Parallels17</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记一次使用 docker 安装 rocketMQ,记录基本概念
-消息模型（Message Model）
-
-RocketMQ主要由 Producer、Broker、Consumer 三部分组成，其中Producer 负责生产消息，Consum
+                            解决 Parallels Desktop 17 无法连接网络问题
+修改一下两个配置文件
+/Library/Preferences/Parallels/dispatcher.desktop.xml
+修改 dispatcher.desktop.
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/nodejs/" class="post-category">
-                                    nodejs
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            enochjs
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">软件</span>
+                    </a>
+                    
                 </div>
                 
             </div>
