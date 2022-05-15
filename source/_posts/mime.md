@@ -44,7 +44,9 @@ multipart/byteranges
 
 ```
 - audio/mp4; codecs="mp4v,mp4a.40.2"; profiles="isom,iso2,mp41"
-- video/mp4; codecs="mp4a.40.2,avc1.64001f"; profiles="mp42,isom"
+- video/mp4; codecs="mp4a.40.2,avc1.64001f"; profiles="mp42,isom"   // H.264
+- video/mp4; codecs="hev1.1.6.L120.90,mp4a.40.2"; profiles="isom,iso2,mp41"  // H.265
+- video/mp4; codecs="vp09.00.40.08,mp4a.40.2"; profiles="isom,iso2,mp41" // vp9
 ```
 
 2. 语法介绍
@@ -55,8 +57,8 @@ multipart/byteranges
 
 #### 市面常用的 codecs
 
-1. H.264 Mpeg-4 AVC (高级视频编码)
-2. H.265 HEVC (高效视频编码)
+1. H.264 Mpeg-4 AVC (高级视频编码), codecs 包含 avc 都是 H.264 编码
+2. H.265 HEVC (高效视频编码) , codecs 包含 hev
 3. VP9 由谷歌开发作为一种开放和自由的视频压缩标准
 
 #### 浏览器支持情况
