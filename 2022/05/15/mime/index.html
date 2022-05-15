@@ -440,7 +440,9 @@ multipart/byteranges</code></pre>
 <li>如下例子</li>
 </ol>
 <pre><code>- audio/mp4; codecs=&quot;mp4v,mp4a.40.2&quot;; profiles=&quot;isom,iso2,mp41&quot;
-- video/mp4; codecs=&quot;mp4a.40.2,avc1.64001f&quot;; profiles=&quot;mp42,isom&quot;</code></pre>
+- video/mp4; codecs=&quot;mp4a.40.2,avc1.64001f&quot;; profiles=&quot;mp42,isom&quot;   // H.264
+- video/mp4; codecs=&quot;hev1.1.6.L120.90,mp4a.40.2&quot;; profiles=&quot;isom,iso2,mp41&quot;  // H.265
+- video/mp4; codecs=&quot;vp09.00.40.08,mp4a.40.2&quot;; profiles=&quot;isom,iso2,mp41&quot; // vp9</code></pre>
 <ol start="2">
 <li>语法介绍</li>
 </ol>
@@ -450,8 +452,8 @@ multipart/byteranges</code></pre>
 <li>profile，其他描述信息，具体我也没看懂，可以有多个，逗号分隔</li>
 </ul>
 <h4 id="市面常用的-codecs"><a href="#市面常用的-codecs" class="headerlink" title="市面常用的 codecs"></a>市面常用的 codecs</h4><ol>
-<li>H.264 Mpeg-4 AVC (高级视频编码)</li>
-<li>H.265 HEVC (高效视频编码)</li>
+<li>H.264 Mpeg-4 AVC (高级视频编码), codecs 包含 avc 都是 H.264 编码</li>
+<li>H.265 HEVC (高效视频编码) , codecs 包含 hev</li>
 <li>VP9 由谷歌开发作为一种开放和自由的视频压缩标准</li>
 </ol>
 <h4 id="浏览器支持情况"><a href="#浏览器支持情况" class="headerlink" title="浏览器支持情况"></a>浏览器支持情况</h4><ul>
