@@ -34,34 +34,36 @@ Note, however, that you can't extract PDFs or .dotx files.
 import path from "path";
 import fs from "fs";
 import ffmpeg from "fluent-ffmpeg";
-import { path as ffmpegPath } from "@ffmpeg-installer/ffmpeg";
+import ffmpegPath from "@ffmpeg-installer/ffmpeg";
 import decompress from "decompress";
 import archiver from "archiver";
+import dayjs from "dayjs";
 
-ffmpeg.setFfmpegPath(ffmpegPath);
+const _ffmpegPath = ffmpegPath.path.replace("app.asar", "app.asar.unpacked");
+
+ffmpeg.setFfmpegPath(_ffmpegPath);
 
 const VIDEO_TYPE = new Array(
-  "avi",
-  "wmv",
-  "mpg",
-  "mpeg",
-  "mov",
-  "rm",
-  "ram",
-  "swf",
-  "flv",
-  "mp4",
-  "wma",
-  "rm",
-  "rmvb",
-  "flv",
-  "mpg",
-  "mkv"
+  ".avi",
+  ".wmv",
+  ".mpg",
+  ".mpeg",
+  ".mov",
+  ".rm",
+  ".ram",
+  ".swf",
+  ".flv",
+  ".mp4",
+  ".wma",
+  ".rm",
+  ".rmvb",
+  ".flv",
+  ".mpg",
+  ".mkv"
 );
 
 export class ParseFile {
-  // 压缩
-  private zipDirectory(sourceDir: string, outPath: string) {
+  zipDirectory(sourceDir: string, outPath: string) {
     const archive = archiver("zip", { zlib: { level: 9 } });
     const stream = fs.createWriteStream(outPath);
     return new Promise((resolve, reject) => {
@@ -74,17 +76,21 @@ export class ParseFile {
     });
   }
 
-  // 将video 转为H.264
-  public translateVideo(filePath: string) {
+  public translateVideo(filePath: string, outDir?: string): Promise<string> {
     const inputPath = filePath;
-    const fileNameIndex = filePath.lastIndexOf("/");
-    const outputPath =
-      inputPath.slice(0, fileNameIndex) +
-      "/output_" +
-      inputPath.slice(fileNameIndex + 1);
+    const pathDir = path.dirname(filePath);
+    const fileName = path.basename(filePath, path.extname(filePath));
+
+    const outputPath = path.resolve(
+      outDir || pathDir,
+      `./${fileName}_${dayjs().format("YYYY_MM_DD_HH_mm_ss")}`
+    );
+    const dest = outputPath + ".mp4";
     return new Promise((resolve, reject) => {
       ffmpeg(inputPath)
         .videoCodec("libx264")
+        // 解决音视频不同步问题
+        .audioCodec("copy)
         .inputFPS(25)
         .videoBitrate(2000)
         .on("error", function (err) {
@@ -92,49 +98,108 @@ export class ParseFile {
           reject(err);
         })
         .on("end", async function () {
-          await fs.promises.unlink(inputPath);
-          await fs.promises.rename(outputPath, inputPath);
+          if (!outDir) {
+            await fs.promises.unlink(inputPath);
+            await fs.promises.rename(dest, `${pathDir}/${fileName}.mp4`);
+            resolve(`${pathDir}/${fileName}.mp4`);
+          } else {
+            resolve(dest);
+          }
           console.log("Processing finished !");
-          resolve("Processing finished !");
         })
-        .save(outputPath);
+        .save(dest);
     });
   }
 
-  // 转ppt
-  public async translatePPT(filePath: string) {
+  public async replaceVideo(
+    basePath: string,
+    files: decompress.File[],
+    sourceName: string,
+    targetName: string
+  ) {
+    let total = files.length;
+    while (total) {
+      const file = files[total - 1];
+      if (
+        file &&
+        /slide.*.xml.rels/.test(file.path) &&
+        file.data.toString().indexOf(sourceName) !== -1
+      ) {
+        const reg = new RegExp(sourceName, "g");
+        const data = await fs.promises.readFile(path.join(basePath, file.path));
+
+        await fs.promises.writeFile(
+          path.join(basePath, file.path),
+          data.toString().replace(reg, targetName)
+        );
+      }
+      total -= 1;
+    }
+  }
+
+  public async translatePPT(
+    filePath: string,
+    outDir?: string
+  ): Promise<string> {
     const fileBuffer = await fs.promises.readFile(filePath);
-    const time = new Date().getTime();
-    const temp = path.resolve(__dirname, `./temp/${time}`);
+    const time = dayjs().format("YYYY_MM_DD_HH_mm_ss");
+    let temp = path.join(__dirname, "temp", `${time}`);
+    if (outDir) {
+      temp = path.join(outDir, "temp", `${time}`);
+      await fs.promises.mkdir(temp, { recursive: true });
+    }
 
     const files = await decompress(fileBuffer, temp);
-
     let count = files.length;
+    let suffix = path.extname(filePath);
     while (count) {
       const file = files[count - 1];
-      const fileName = file.path.slice(file.path.lastIndexOf("/") + 1);
-      const ext = fileName.slice(fileName.lastIndexOf(".") + 1);
-      if (VIDEO_TYPE.includes(ext)) {
-        await this.translateVideo(`${temp}/${file.path}`);
+      if (file) {
+        const fileName = path.basename(file.path);
+        const ext = path.extname(fileName);
+
+        if (VIDEO_TYPE.includes(ext)) {
+          console.log(
+            "VIDEO_TYPE",
+            file.path,
+            `${path.dirname(file.path)}.mp4`
+          );
+          await this.translateVideo(path.join(temp, file.path));
+          if (ext !== ".mp4") {
+            await this.replaceVideo(
+              temp,
+              files,
+              fileName,
+              `${path.basename(file.path, ext)}.mp4`
+            );
+            // 遇到视频需要改后缀的，设置为ppt后缀，提示用户手动转为pptx
+            suffix = ".ppt";
+          }
+        }
       }
       count -= 1;
     }
-    console.log(path.resolve(__dirname, `./output/${time}.ppt`));
-    await this.zipDirectory(
-      path.resolve(temp),
-      path.resolve(__dirname, `./output_${time}.ppt`)
+
+    const fileName = path.basename(
+      filePath,
+      filePath.slice(filePath.lastIndexOf("."))
     );
+    const outputPath = path.resolve(
+      outDir || __dirname,
+      `./${fileName}_${time}${suffix}`
+    );
+    await this.zipDirectory(path.resolve(temp), outputPath);
     try {
       await fs.promises.rm(temp, { recursive: true });
-    } catch (error) {}
+      return outputPath;
+    } catch (error) {
+      console.log("translate ppt error", error);
+      return outputPath;
+    }
   }
 }
 
 const parseFile = new ParseFile();
-
-// parseFile.translatePPT(
-//   path.resolve(__dirname, "your_ppt_path.ppt")
-// );
 
 export default parseFile;
 ```
